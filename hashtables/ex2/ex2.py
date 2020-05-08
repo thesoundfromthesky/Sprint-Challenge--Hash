@@ -10,6 +10,9 @@ def reconstruct_trip(tickets, length):
     """
     YOUR CODE HERE
     """
+    """
+    Make list of destination and return
+    """
     route=[]
     
     #Convert tickets to dict
