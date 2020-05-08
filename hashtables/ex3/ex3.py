@@ -4,13 +4,15 @@ def intersection(arrays):
     YOUR CODE HERE
     """
     
+    arrays.sort(key=lambda i:len(i))
+
     d = {}
     l = len(arrays)
-    for i in arrays:
+    for idx, i in enumerate(arrays):
         for i in i:
             if i in d:
                 d[i].append(i)
-            else:
+            elif idx == 0:
                 d[i] = [i]
 
     result=[]
