@@ -3,25 +3,21 @@ def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    shortest = None
-    idx = None
-    convert=[]
-    for i,v in enumerate(arrays):
-        if shortest is None:
-            shortest = len(v)
-            idx = i
-        else:
-            if len(v) < shortest:
-                shortest = len(v)
-                idx = i
-        convert.append({v:k for k,v in enumerate(v)})
-
-   
-    print(convert)
     
+    d = {}
+    l = len(arrays)
+    for i in arrays:
+        for i,v in enumerate(i):
+            if v in d:
+                d[v].append(v)
+            else:
+                d[v] = [v]
 
+    result=[]
 
-
+    for i,v in d.items():
+       if len(v) == l:
+           result.append(i)
 
 
     return result
